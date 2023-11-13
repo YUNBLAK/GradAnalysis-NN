@@ -18,13 +18,18 @@ Gradient Analysis is very important to find any gradient instabilty during train
             for g in grads:
                 flattened_gradients.append(tf.reshape(g, [-1]).numpy())
             flattened_gradients = np.concatenate(flattened_gradients, axis=0)
-    
+
+
+### Counting zero gradients 
+
             # Count the number of zeros in the flattened_gradients
             # Count the number of zeros in the flattened_gradients
             print()
             print()
             zero_count = np.sum(flattened_gradients == 0)
             print("The number of 0:", zero_count)
+
+### Statistical Analysis
             
             flattened_gradients = tf.cast(flattened_gradients, tf.float32)
             # Compute the standard deviation of flattened_gradients using numpy
@@ -34,6 +39,8 @@ Gradient Analysis is very important to find any gradient instabilty during train
             # Compute the variance of flattened_gradients using numpy
             variance = np.var(flattened_gradients, ddof=1)
             print("Variance:", variance)
+
+### Checking Min/Max gradient values
     
             # Compute the maximum and minimum values of flattened_gradients using numpy
             max_value = np.max(flattened_gradients)
@@ -50,6 +57,8 @@ Gradient Analysis is very important to find any gradient instabilty during train
             arr5.append(min_value)
     
             #self.visualize_gradients(epoch, flattened_gradients)
+
+### Visualizing gradients
     
         def visualize_gradients(self, epoch, gradients):
             plt.figure(figsize=(8, 6))
