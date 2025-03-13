@@ -3,7 +3,7 @@ Gradient Analysis for Neural Networks
 
 ## Summuary
 Gradient Analysis is very important to find any gradient instabilty during training process of neural networks. If the gradients is becoming vanishing, the neural networks training will be ruined. 
-
+Below is some explanation code block.
 
 # Gradient Analysis Sources
 
